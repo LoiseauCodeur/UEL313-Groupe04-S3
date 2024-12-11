@@ -4,6 +4,7 @@ namespace Watson\Controller;
 
 use Silex\Application;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 class HomeController {
 
@@ -65,5 +66,21 @@ class HomeController {
             'last_username' => $app['session']->get('_security.last_username'),
             )
         );
+    }
+
+    /**
+     * Rss controller.
+     *
+     * @param Application $app Silex application
+     */
+    public function rssAction(Application $app) {
+        $links = $app['dao.link']->findAll();
+        // Rendu du template
+        $content = $app['twig']->render('fluxRSS.xml.twig', ['links' => $links]);
+
+        // Création de la réponse avec le bon type de contenu
+        $response = new Response($content);
+        $response->headers->set('Content-Type', 'text/xml');
+        return $response;
     }
 }
