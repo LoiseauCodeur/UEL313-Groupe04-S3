@@ -1,0 +1,73 @@
+/*Style personnalisé */
+
+/* Les boutons */
+.btn-primary, .btn-success {
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-primary:hover, .btn-success:hover {
+    background-color: #0056b3; 
+    transform: scale(1.05); 
+}
+
+/* Le logo */
+#logo {
+    transition: transform 0.5s ease, color 0.3s ease, filter 0.3s ease;
+    color: #333; 
+    filter: grayscale(100%) contrast(100%);
+}
+
+#logo:hover {
+    transform: rotate(360deg); 
+    color: #ff5722; 
+    filter: grayscale(0%) contrast(120%); 
+    animation: rotate-once 1s ease 1; 
+}
+
+@keyframes rotate-once {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Le menu */
+.custom-navbar {
+    background-color: #665a61;
+    color: white; 
+}
+
+.navbar-nav > li.open > a.dropdown-toggle {
+    background-color:#4d4449 !important; 
+}
+
+.navbar-nav > .active > a {
+    background-color: #4d4449 !important;
+}
+
+/* Les articles */
+.custom-card{
+    background-color: #f8f9fa; /* Fond clair */
+    border: 1px solid #ddd; /* Bordure légère */
+    padding: 20px; /* Espacement interne */
+    border-radius: 8px; /* Coins arrondis */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Ombre portée légère */
+    padding-right: 0
+}
+
+/* Le formulaire */
+.custom-form{
+    background-color: #f8f9fa;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); 
+    max-width: 400px; 
+    margin: 30px auto; 
+    padding: 20px;
+    border-radius: 8px !important;
+}
+
+/* Les titres */
+h1, h2, h3, h4 {
+    font-family: 'Montserrat', sans-serif;
+}
