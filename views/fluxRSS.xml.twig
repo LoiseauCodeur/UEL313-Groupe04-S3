@@ -4,7 +4,7 @@
         <title>Watson</title>
         <link>{{ app.request.uri }}</link>
         <description>Flux RSS</description>
-        {% for link in links %}
+        {% for link in links| slice(0,3)%}
             <item>
                 <title>{{ link.title }}</title>
                 <link>{{ link.url }}</link>
