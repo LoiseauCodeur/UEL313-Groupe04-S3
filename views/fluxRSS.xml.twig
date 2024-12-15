@@ -4,11 +4,12 @@
         <title>Watson</title>
         <link>{{ app.request.uri }}</link>
         <description>Flux RSS</description>
-        {% for link in links| slice(0,3)%}
+        {% for link in links| slice(0,15)%}
             <item>
                 <title>{{ link.title }}</title>
                 <link>{{ link.url }}</link>
                 <description>{{ link.desc }}</description>
+                <guid>{{ link.url }}</guid> 
             </item>
         {% endfor %}
     </channel>

@@ -80,7 +80,7 @@ class HomeController {
 
         // Création de la réponse avec le bon type de contenu
         $response = new Response($content);
-        $response->headers->set('Content-Type', 'text/xml');
+        $response->headers->set('Content-Type', 'application/rss+xml; charset=UTF-8'); // ajouter l'encodage et le type rss
         return $response;
     }
 }
